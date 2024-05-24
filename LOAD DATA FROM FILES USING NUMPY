@@ -1,0 +1,16 @@
+import numpy as np
+
+#EXAMPLE 1 (Loading data from a text file)
+
+loaded_data = np.loadtxt('array.txt')
+print(loaded_data)
+
+#EXAMPLE 2 (Loading data from a binary file)
+
+loaded_array = np.load('array.npy')
+print(loaded_array)
+
+#EXAMPLE 3 (Loading data from a CSV file)
+
+loaded_data = np.genfromtxt('data.csv', delimiter=',', dtype=None, names=True, encoding=None)
+print(loaded_data)
