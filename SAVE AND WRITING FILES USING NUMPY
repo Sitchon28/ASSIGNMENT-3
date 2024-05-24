@@ -1,0 +1,19 @@
+import numpy as np 
+
+#EXAMPLE 1 (Saving an array to a text file.)
+
+arr = np.arange(10).reshape(1, 5)
+np.savetxt('array.txt', arr)
+
+#EXAMPLE 2 (Saving an array to a binary file.)
+
+arr = np.random.rand(5, 5)
+np.save('array.npy', arr)
+
+#EXAMPLE 3 (Writing structured data to a CSV file)
+data = np.array([(1, 'John', 25),
+                 (2, 'Alice', 30),
+                 (3, 'Bob', 35)],
+                dtype=[('id', int), ('name', 'U10'), ('age', int)])
+np.savetxt('data.csv', data, delimiter=',', fmt='%d,%s,%d', header='ID,Name,Age', comments='')
+
